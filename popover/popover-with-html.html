@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Popover with html</title>
+  </head>
+  <body>
+    <h1>Popover API</h1>
+    <h2>Example 1: Default<h2>
+    <div>
+      <button popovertarget="mypopover">Default</button>
+      <button popovertarget="mypopover" popovertargetaction="show">show</button>
+      <button popovertarget="mypopover" popovertargetaction="toggle">Toggle</button>
+    </div>
+    <div id="mypopover" popover>
+      <nav>
+          <button popovertarget="mypopover" popovertargetaction="hide">hide</button>
+      </nav>
+      Popover content
+      <span>:hello</span>
+    </div>
+    <style>
+      #mypopover {
+        position: absolute;
+        top: 0;
+      }
+      #mypopover::backdrop{
+        background-color: rgba(219, 76, 76, 0.5);
+      }
+      #mypopover span {
+        color: red;
+        transition: all linear 1s;
+      }
+      #mypopover:popover-open span {
+        color: green;
+      }
+    </style>
+    <script>
+    </script>
+  </body>
+</html>
